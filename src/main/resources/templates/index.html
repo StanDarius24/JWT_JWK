@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Rich Text Editor</title>
+
+    <link th:rel="stylesheet" th:href="@{/assets/summernote/summernote-bs4.css}"/>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8  col-first">
+            <form method="post" th:object="${post}">
+
+                <select th:field="*{algorithm}">
+                    <option th:value="'ES256'" th:text="ES256"></option>
+                    <option th:value="'ES384'" th:text="ES384"></option>
+                    <option th:value="'ES512'" th:text="ES512"></option>
+                    <option th:value="'RS256'" th:text="RS256"></option>
+                    <option th:value="'RS384'" th:text="RS384"></option>
+                    <option th:value="'RS512'" th:text="RS512"></option>
+                    <option th:value="'PS256'" th:text="PS256"></option>
+                    <option th:value="'PS384'" th:text="PS384"></option>
+                    <option th:value="'PS512'" th:text="PS512"></option>
+
+
+                </select>
+
+                <div class="form-group">
+                    <textarea type="text" rows="6" id="JWT" placeholder="JWT" class="form-control"
+                              th:field="*{jwt}" autocomplete="off"></textarea>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Decode JWT</button>
+            </form>
+            <div class="col-sm-12 mt-5 col-last">
+                <h1>JSON Data</h1>
+                <div th:each="entry : ${data}">
+                    <p th:text="${entry.key} + ': ' + ${entry.value}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/assets/summernote/summernote-bs4.js}"></script>
+
+<script>
+    $('#content').summernote({
+        height: 200
+    });
+</script>
+
+</body>
+</html>
