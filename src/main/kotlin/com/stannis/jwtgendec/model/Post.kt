@@ -4,6 +4,6 @@ class Post {
 
     var jwt: String? = null
 
-    var algorithm: String? = null
+    var jwk: String? = null
 
 }

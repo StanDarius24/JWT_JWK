@@ -34,6 +34,12 @@ dependencies {
     implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.2'
     // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-gson
     implementation group: 'io.jsonwebtoken', name: 'jjwt-gson', version: '0.12.2'
+    // https://mvnrepository.com/artifact/com.nimbusds/nimbus-jose-jwt
+    implementation group: 'com.nimbusds', name: 'nimbus-jose-jwt', version: '9.36'
+    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk18on', version: '1.76'
+    // https://mvnrepository.com/artifact/net.minidev/json-smart
+    implementation group: 'net.minidev', name: 'json-smart', version: '1.0.9'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
